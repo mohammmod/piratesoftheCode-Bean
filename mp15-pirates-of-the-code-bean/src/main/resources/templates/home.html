@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/}" th:object="${foundMermaid}" method="get">
+        <button type="submit">find mermaid</button>
+    </form>
+    <form th:if="${foundMermaid} == true" th:action="@{/tears}" th:object="${gotTheTears}" method="get">
+        <button>get her tears</button>
+    </form>
+    <form th:if="${gotTheTears} == true" th:action="@{/challice}" th:object="${foundChallice}" method="get">
+        <button>find challice</button>
+    </form>
+    <form th:if="${foundChallice} == true" th:action="@{/drink}" th:object="${drinkThetear}" method="get">
+        <button>drink the tear</button>
+    </form>
+    <span th:if="${drinkThetear} == true" >you get the immortality</span>
+
+</body>
+</html>
